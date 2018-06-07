@@ -15,7 +15,7 @@ type GetUserResponse struct {
 	User   User   `json:"user"`
 }
 
-// GetUpcomingResponse stores the get reponse of the upcoming
+// GetUpcomingResponse stores the get response of the upcoming
 type GetUpcomingResponse struct {
 	Result   string    `json:"result"`
 	Episodes []Episode `json:"episodes"`
