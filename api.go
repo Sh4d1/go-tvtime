@@ -8,17 +8,30 @@ import (
 
 var userURL = "https://api.tvtime.com/v1/user"
 var upcomingURL = "https://api.tvtime.com/v1/agenda"
+var watchlistURL = "https://api.tvtime.com/v1/to_watch"
 
 // GetUserResponse stores the get response of the user
 type GetUserResponse struct {
-	Result string `json:"result"`
-	User   User   `json:"user"`
+	Result  string `json:"result"`
+	User    User   `json:"user"`
+	Message string `json:"message"`
+	Code    int    `json:"code"`
 }
 
 // GetUpcomingResponse stores the get response of the upcoming
 type GetUpcomingResponse struct {
 	Result   string    `json:"result"`
 	Episodes []Episode `json:"episodes"`
+	Message  string    `json:"message"`
+	Code     int       `json:"code"`
+}
+
+// GetWatchlistResponse stores the get response of the watchlist
+type GetWatchlistResponse struct {
+	Result   string    `json:"result"`
+	Episodes []Episode `json:"episodes"`
+	Message  string    `json:"message"`
+	Code     int       `json:"code"`
 }
 
 func getRequest(url string) (*http.Response, error) {
@@ -75,4 +88,25 @@ func GetUpcoming() ([]Episode, error) {
 		return []Episode{}, err
 	}
 	return upcomingResp.Episodes, nil
+}
+
+// GetWatchlist return the watchlist
+func GetWatchlist() ([]Episode, error) {
+	resp, err := getRequest(watchlistURL)
+	if err != nil {
+		return []Episode{}, err
+	}
+
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return []Episode{}, err
+	}
+
+	var watchlistResp = new(GetWatchlistResponse)
+	err = json.Unmarshal(body, &watchlistResp)
+	if err != nil {
+		return []Episode{}, err
+	}
+	return watchlistResp.Episodes, nil
 }

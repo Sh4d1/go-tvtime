@@ -92,7 +92,6 @@ func Login() error {
 		}
 		defer respAccessToken.Body.Close()
 		bodyAccessToken, err := ioutil.ReadAll(respAccessToken.Body)
-		fmt.Println(string(bodyAccessToken))
 
 		if err != nil {
 			return err

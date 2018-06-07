@@ -40,10 +40,11 @@ AUTHOR:
     Patrik Cyvoct (patrik@ptrk.io)
 
 COMMANDS:
-    login     Login to TV Time
-    user      Display current user
-    upcoming  Display upcoming episodes
-    help, h   Shows a list of commands or help for one command
+    login      Login to TV Time
+    user       Display current user
+    upcoming   Display upcoming episodes
+    watchlist  Display watchlist
+    help, h    Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
     --help, -h     show help

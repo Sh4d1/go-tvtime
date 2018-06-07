@@ -40,6 +40,13 @@ func main() {
 				return tvtime.DisplayUpcoming()
 			},
 		},
+		{
+			Name:  "watchlist",
+			Usage: "Display watchlist",
+			Action: func(c *cli.Context) error {
+				return tvtime.DisplayWatchlist()
+			},
+		},
 	}
 
 	err := app.Run(os.Args)
