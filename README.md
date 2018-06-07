@@ -1,10 +1,9 @@
+[![Build Status](https://travis-ci.com/Sh4d1/go-tvtime.svg?branch=master)](https://travis-ci.com/Sh4d1/go-tvtime)
 [![Release](https://img.shields.io/github/release/Sh4d1/go-tvtime.svg?style=flat-square)](https://github.com/Sh4d1/go-tvtime/releases/latest)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Travis](https://img.shields.io/travis/Sh4d1/go-tvtime.svg?style=flat-square)](https://travis-ci.org/Sh4d1/go-tvtime)
 [![Coverage Status](https://img.shields.io/codecov/c/github/Sh4d1/go-tvtime/master.svg?style=flat-square)](https://codecov.io/gh/Sh4d1/go-tvtime)
 [![Go Report Card](https://goreportcard.com/badge/github.com/Sh4d1/go-tvtime?style=flat-square)](https://goreportcard.com/report/github.com/Sh4d1/go-tvtime)
 [![Powered By: GoReleaser](https://img.shields.io/badge/powered%20by-goreleaser-green.svg?style=flat-square)](https://github.com/goreleaser)
-
 
 # Go TvTime
 

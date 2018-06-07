@@ -18,7 +18,7 @@ import (
 var tvtimeURL = "https://api.tvtime.com/v1/"
 
 var clientID = "va0D2CEfSPNNlLoYMYYT"
-var clientSecret = "RF51gSEZBJAbLXmEUCZ8thJAwJPAyQSafCQCyqOt" // #nosec
+var clientSecret = "RF51gSEZBJAbLXmEUCZ8thJAwJPAyQSafCQCyqOt" // nolint
 
 var deviceCodeURL = tvtimeURL + "oauth/device/code"
 var deviceCodeURLValues = url.Values{"client_id": {clientID}}
