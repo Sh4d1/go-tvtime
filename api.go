@@ -22,6 +22,9 @@ type GetUpcomingResponse struct {
 func getRequest(url string) (*http.Response, error) {
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", url, nil)
+	if err != nil {
+		return nil, err
+	}
 	token, err := GetAccessToken()
 	if err != nil {
 		return nil, err

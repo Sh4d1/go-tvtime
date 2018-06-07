@@ -82,7 +82,7 @@ func Login() error {
 	var accessTokenResp = new(AccessTokenResponse)
 	var counter = 0
 	for {
-		counter += 1
+		counter++
 		respAccessToken, err := http.PostForm(accessTokenURL, accessTokenURLValues)
 		if err != nil {
 			return err
@@ -109,7 +109,7 @@ func Login() error {
 	}
 
 	if accessTokenResp.Result != "OK" {
-		return errors.New("Could not login, please try again.")
+		return errors.New("could not login, please try again")
 	}
 
 	var settings Settings

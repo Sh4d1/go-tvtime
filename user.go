@@ -6,7 +6,7 @@ import (
 )
 
 type User struct {
-	Id   int    `json:"id"`
+	ID   int    `json:"id"`
 	Name string `json:"name"`
 }
 
@@ -16,6 +16,6 @@ func DisplayUser() error {
 		return err
 	}
 	fmt.Print("Name: " + user.Name + "\n")
-	fmt.Print("ID: " + strconv.Itoa(user.Id) + "\n")
+	fmt.Print("ID: " + strconv.Itoa(user.ID) + "\n")
 	return nil
 }

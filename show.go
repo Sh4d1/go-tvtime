@@ -1,14 +1,14 @@
 package tvtime
 
 type Show struct {
-	Id            int    `json:"id"`
+	ID            int    `json:"id"`
 	Name          string `json:"name"`
 	SeenEpisodes  int    `json:"seen_episodes"`
 	AiredEpisodes int    `json:"aired_episodes"`
 }
 
 type Episode struct {
-	Id           int    `json:"id"`
+	ID           int    `json:"id"`
 	Name         string `json:"name"`
 	Number       int    `json:"number"`
 	SeasonNumber int    `json:"season_number"`
