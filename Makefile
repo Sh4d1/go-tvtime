@@ -32,7 +32,7 @@ $(BINARIES): $(SOURCES)
 
 .PHONY: lint
 lint: 
-	golangci-lint run --enable-all ./...
+	./bin/golangci-lint run --enable-all ./...
 
 .PHONY: ci
 ci: lint build
