@@ -9,15 +9,18 @@ import (
 
 var settingsDir = configdir.New("", "tvtime")
 
+// Settings stores the access token
 type Settings struct {
 	AccessToken string
 }
 
+// HaveSettings returns true if we have some settings
 func HaveSettings() bool {
 	config := settingsDir.QueryFolderContainsFile("settings.json")
 	return (config != nil)
 }
 
+// WriteSettings writes the settings
 func WriteSettings(settings Settings) error {
 	settingsData, err := json.Marshal(&settings)
 	if err != nil {
@@ -29,6 +32,7 @@ func WriteSettings(settings Settings) error {
 	return err
 }
 
+// GetSettings returns the settings
 func GetSettings() (*Settings, error) {
 	config := settingsDir.QueryFolderContainsFile("settings.json")
 
@@ -47,6 +51,7 @@ func GetSettings() (*Settings, error) {
 	return &settings, nil
 }
 
+// GetAccessToken returns the access token
 func GetAccessToken() (string, error) {
 	settings, err := GetSettings()
 	if err != nil {

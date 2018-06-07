@@ -1,5 +1,6 @@
 package tvtime
 
+// Show is the struct to store a show
 type Show struct {
 	ID            int    `json:"id"`
 	Name          string `json:"name"`
@@ -7,6 +8,7 @@ type Show struct {
 	AiredEpisodes int    `json:"aired_episodes"`
 }
 
+// Episode is the struct to store an episode
 type Episode struct {
 	ID           int    `json:"id"`
 	Name         string `json:"name"`

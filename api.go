@@ -9,11 +9,13 @@ import (
 var userURL = "https://api.tvtime.com/v1/user"
 var upcomingURL = "https://api.tvtime.com/v1/agenda"
 
+// GetUserResponse stores the get response of the user
 type GetUserResponse struct {
 	Result string `json:"result"`
 	User   User   `json:"user"`
 }
 
+// GetUpcomingResponse stores the get reponse of the upcoming
 type GetUpcomingResponse struct {
 	Result   string    `json:"result"`
 	Episodes []Episode `json:"episodes"`
@@ -33,6 +35,7 @@ func getRequest(url string) (*http.Response, error) {
 	return client.Do(req)
 }
 
+// GetUser returns the user
 func GetUser() (User, error) {
 	resp, err := getRequest(userURL)
 	if err != nil {
@@ -53,6 +56,7 @@ func GetUser() (User, error) {
 	return userResp.User, nil
 }
 
+// GetUpcoming returns the upcoming episodes
 func GetUpcoming() ([]Episode, error) {
 	resp, err := getRequest(upcomingURL)
 	if err != nil {

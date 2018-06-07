@@ -5,11 +5,13 @@ import (
 	"strconv"
 )
 
+// User is the struct to store a user
 type User struct {
 	ID   int    `json:"id"`
 	Name string `json:"name"`
 }
 
+// DisplayUser displays the current user
 func DisplayUser() error {
 	user, err := GetUser()
 	if err != nil {

@@ -2,6 +2,7 @@ package tvtime
 
 import "fmt"
 
+// DisplayUpcoming displays the upcoming episodes
 func DisplayUpcoming() error {
 	upcoming, err := GetUpcoming()
 	if err != nil {

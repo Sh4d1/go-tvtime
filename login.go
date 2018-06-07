@@ -18,11 +18,12 @@ import (
 var tvtimeURL = "https://api.tvtime.com/v1/"
 
 var clientID = "va0D2CEfSPNNlLoYMYYT"
-var clientSecret = "RF51gSEZBJAbLXmEUCZ8thJAwJPAyQSafCQCyqOt"
+var clientSecret = "RF51gSEZBJAbLXmEUCZ8thJAwJPAyQSafCQCyqOt" // #nosec
 
 var deviceCodeURL = tvtimeURL + "oauth/device/code"
 var deviceCodeURLValues = url.Values{"client_id": {clientID}}
 
+// DeviceCodeResponse is the struct to store the response of the device code call
 type DeviceCodeResponse struct {
 	Result          string `json:"result"`
 	Message         string `json:"message"`
@@ -36,12 +37,14 @@ type DeviceCodeResponse struct {
 var accessTokenURL = tvtimeURL + "oauth/access_token"
 var accessTokenURLValues = url.Values{"client_id": {clientID}, "client_secret": {clientSecret}}
 
+// AccessTokenResponse is the struct to store the response of the access token call
 type AccessTokenResponse struct {
 	Result      string `json:"result"`
 	Message     string `json:"message"`
 	AccessToken string `json:"access_token"`
 }
 
+// Login logs in a user
 func Login() error {
 
 	if HaveSettings() {
